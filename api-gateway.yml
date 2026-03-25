@@ -9,6 +9,8 @@ spring:
           uri: lb://account-service
           predicates:
             - Path=/accounts/**
+          filters:
+            - StripPrefix=1
 
         - id: auth-service
           uri: lb://auth-service
